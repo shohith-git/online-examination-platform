@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<title>Exam</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="container mt-5">
+
+<h2>{{exam.title}}</h2>
+
+<p>
+Time Remaining:
+<span id="timer">300</span>
+seconds
+</p>
+
+<form method="POST">
+
+{% for q in exam.questions %}
+
+<div class="card mb-3">
+
+<div class="card-body">
+
+<h5>{{q.question}}</h5>
+
+{% for option in q.options %}
+
+<div class="form-check">
+
+<input
+class="form-check-input"
+type="radio"
+name="q{{loop.parent.index0}}"
+value="{{option}}">
+
+<label class="form-check-label">
+
+{{option}}
+
+</label>
+
+</div>
+
+{% endfor %}
+
+</div>
+
+</div>
+
+{% endfor %}
+
+<button class="btn btn-success">
+
+Submit Exam
+
+</button>
+
+</form>
+
+</div>
+
+<script>
+
+let t=300;
+
+setInterval(function(){
+
+if(t>0){
+
+t--;
+
+document.getElementById("timer").innerHTML=t;
+
+}
+
+},1000);
+
+</script>
+
+</body>
+
+</html>
