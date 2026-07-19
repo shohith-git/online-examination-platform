@@ -1,39 +1,71 @@
 <!DOCTYPE html>
-
-<html>
-
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exam Result</title>
 
-<title>Result</title>
-
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
-
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 
 <body>
 
-<div class="container mt-5 text-center">
+<div class="container mt-5">
 
-<h2>Exam Completed</h2>
+    <div class="card shadow-lg p-5 text-center">
 
-<h3>{{username}}</h3>
+        <h2 class="text-success mb-4">
+            🎉 Examination Submitted Successfully
+        </h2>
 
-<h1>
+        <hr>
 
-{{score}} / {{total}}
+        <h4 class="mt-4">Student Details</h4>
 
-</h1>
+        <table class="table table-bordered mt-3">
 
-<a
-href="/"
-class="btn btn-primary">
+            <tr>
+                <th>Name</th>
+                <td>{{ student.name }}</td>
+            </tr>
 
-Home
+            <tr>
+                <th>Email</th>
+                <td>{{ student.email }}</td>
+            </tr>
 
-</a>
+            <tr>
+                <th>Score</th>
+                <td>{{ score }}/5</td>
+            </tr>
+
+            <tr>
+                <th>Status</th>
+
+                <td>
+                    {% if score >= 3 %}
+                        <span class="badge bg-success">PASS</span>
+                    {% else %}
+                        <span class="badge bg-danger">FAIL</span>
+                    {% endif %}
+                </td>
+
+            </tr>
+
+        </table>
+
+        <div class="mt-4">
+
+            <a href="/" class="btn btn-primary">
+                ⬅ Back to Home
+            </a>
+
+        </div>
+
+    </div>
 
 </div>
 
 </body>
-
 </html>

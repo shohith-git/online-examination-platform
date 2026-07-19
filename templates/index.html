@@ -1,27 +1,176 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Online Examination Platform</title>
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 </head>
 
-<body class="bg-light">
+<body>
 
-<div class="container mt-5 text-center">
+<!-- Navbar -->
 
-<h1>Online Examination Platform</h1>
+<nav class="navbar navbar-expand-lg navbar-dark">
 
-<p class="lead">AWS Three-Tier Flask Application</p>
+    <div class="container">
 
-<a href="/student/login" class="btn btn-primary m-2">
-Student Login
-</a>
+        <a class="navbar-brand" href="/">Exam Portal</a>
 
-<a href="/admin" class="btn btn-dark m-2">
-Admin Panel
-</a>
+        <div>
 
-</div>
+            <a href="/student/login" class="btn btn-light me-2">
+                Student Login
+            </a>
+
+            <a href="/admin" class="btn btn-warning">
+                Admin
+            </a>
+
+        </div>
+
+    </div>
+
+</nav>
+
+<!-- Hero Section -->
+
+<section class="container text-center mt-5">
+
+    <h1 class="display-4 fw-bold">
+        Online Examination Platform
+    </h1>
+
+    <p class="lead mt-3">
+        A Highly Available Three-Tier Web Application deployed on AWS using
+        Amazon EC2, Application Load Balancer, Auto Scaling Group and Amazon RDS.
+    </p>
+
+    <div class="mt-4">
+
+        <a href="/student/login" class="btn btn-primary btn-lg">
+            Start Examination
+        </a>
+
+    </div>
+
+</section>
+
+<!-- Features -->
+
+<section class="container mt-5">
+
+    <div class="row text-center">
+
+        <div class="col-md-4">
+
+            <div class="card shadow p-4">
+
+                <i class="fas fa-user-graduate fa-3x text-primary mb-3"></i>
+
+                <h4>Student Registration</h4>
+
+                <p>
+                    Students can register using their name and email before
+                    attending the examination.
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="col-md-4">
+
+            <div class="card shadow p-4">
+
+                <i class="fas fa-file-alt fa-3x text-success mb-3"></i>
+
+                <h4>Online Examination</h4>
+
+                <p>
+                    Attend multiple-choice examinations and submit answers
+                    securely through the web application.
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="col-md-4">
+
+            <div class="card shadow p-4">
+
+                <i class="fas fa-chart-bar fa-3x text-warning mb-3"></i>
+
+                <h4>Results & Reports</h4>
+
+                <p>
+                    View examination results instantly while administrators can
+                    monitor student performance.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- AWS Architecture -->
+
+<section class="container mt-5">
+
+    <div class="card shadow p-4">
+
+        <h3 class="text-center mb-4">
+            AWS Services Used
+        </h3>
+
+        <div class="row text-center">
+
+            <div class="col-md-3">
+                <h5>Amazon EC2</h5>
+            </div>
+
+            <div class="col-md-3">
+                <h5>Application Load Balancer</h5>
+            </div>
+
+            <div class="col-md-3">
+                <h5>Auto Scaling Group</h5>
+            </div>
+
+            <div class="col-md-3">
+                <h5>Amazon RDS</h5>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- Footer -->
+
+<footer class="text-center mt-5 mb-4">
+
+    <hr>
+
+    <p>
+        Developed by <strong>Shohith Kumar K</strong>
+    </p>
+
+    <p>
+        AWS | Flask | Amazon EC2 | ALB | Auto Scaling | Amazon RDS
+    </p>
+
+</footer>
 
 </body>
+
 </html>
