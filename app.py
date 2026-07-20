@@ -94,6 +94,13 @@ def start_exam(username):
 
         student = cursor.fetchone()
 
+        # ---------- DEBUG ----------
+        print("=" * 60)
+        print("USERNAME:", username)
+        print("STUDENT:", student)
+        print("=" * 60)
+        # ---------------------------
+
         cursor.execute(
             """
             INSERT INTO results(student, email, score, total, status)
