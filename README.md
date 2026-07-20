@@ -202,13 +202,13 @@ The application follows AWS best practices by separating the presentation, appli
 
 ## 15. Examination Dashboard
 
-![](static/images/15-examination-dashboard.png)
+![](static/images/15-examination-instructions.png)
 
 ---
 
 ## 16. Online Examination
 
-![](static/images/16-online-examination.png)
+![](static/images/16-online-examination-interface.png)
 
 ---
 
