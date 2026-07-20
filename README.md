@@ -118,7 +118,7 @@ The application follows AWS best practices by separating the presentation, appli
 
 ## 1. VPC Overview
 
-![](images/01-vpc-overview.png)
+![](static/images/01-vpc-overview.png)
 
 ---
 
