@@ -45,8 +45,8 @@ def student_login():
 
     if request.method == "POST":
 
-        username = request.form["username"]
-        email = request.form["email"]
+        username = request.form["username"].strip()
+        email = request.form["email"].strip()
 
         cursor = connection.cursor()
 
@@ -57,13 +57,29 @@ def student_login():
 
         connection.commit()
 
-        return redirect(url_for("dashboard", username=username))
+        print("=" * 60)
+        print("INSERT SUCCESS")
+        print("Inserted ID :", cursor.lastrowid)
+        print("Username    :", username)
+        print("Email       :", email)
+        print("=" * 60)
+
+        return redirect(
+            url_for(
+                "dashboard",
+                username=username
+            )
+        )
 
     return render_template("login.html")
 
 
 @app.route("/student/dashboard/<username>")
 def dashboard(username):
+
+    print("=" * 60)
+    print("Dashboard Username :", username)
+    print("=" * 60)
 
     return render_template(
         "dashboard.html",
@@ -74,6 +90,10 @@ def dashboard(username):
 
 @app.route("/exam/<username>", methods=["GET", "POST"])
 def start_exam(username):
+
+    print("=" * 60)
+    print("Exam Username :", username)
+    print("=" * 60)
 
     if request.method == "POST":
 
@@ -88,18 +108,24 @@ def start_exam(username):
         cursor = connection.cursor()
 
         cursor.execute(
-            "SELECT email FROM students WHERE name=%s ORDER BY id DESC LIMIT 1",
+            """
+            SELECT name, email
+            FROM students
+            WHERE name=%s
+            ORDER BY id DESC
+            LIMIT 1
+            """,
             (username,)
         )
 
         student = cursor.fetchone()
 
-        # ---------- DEBUG ----------
         print("=" * 60)
-        print("USERNAME:", username)
-        print("STUDENT:", student)
+        print("Fetched Student :", student)
         print("=" * 60)
-        # ---------------------------
+
+        if student is None:
+            return "Student not found in database", 404
 
         cursor.execute(
             """
@@ -107,7 +133,7 @@ def start_exam(username):
             VALUES(%s, %s, %s, %s, %s)
             """,
             (
-                username,
+                student["name"],
                 student["email"],
                 score,
                 len(exam["questions"]),
@@ -138,7 +164,13 @@ def result(username, score):
     cursor = connection.cursor()
 
     cursor.execute(
-        "SELECT * FROM students WHERE name=%s ORDER BY id DESC LIMIT 1",
+        """
+        SELECT *
+        FROM students
+        WHERE name=%s
+        ORDER BY id DESC
+        LIMIT 1
+        """,
         (username,)
     )
 
@@ -156,10 +188,10 @@ def admin():
 
     cursor = connection.cursor()
 
-    cursor.execute("SELECT * FROM students")
+    cursor.execute("SELECT * FROM students ORDER BY id DESC")
     students = cursor.fetchall()
 
-    cursor.execute("SELECT * FROM results")
+    cursor.execute("SELECT * FROM results ORDER BY id DESC")
     results = cursor.fetchall()
 
     return render_template(
