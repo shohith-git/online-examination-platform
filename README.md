@@ -124,103 +124,103 @@ The application follows AWS best practices by separating the presentation, appli
 
 ## 2. Public & Private Subnets
 
-![](screenshots/02-public-private-subnets.png)
+![](static/images/02-public-private-subnets.png)
 
 ---
 
 ## 3. Security Groups
 
-![](screenshots/03-security-groups.png)
+![](static/images/03-security-groups.png)
 
 ---
 
 ## 4. Bastion Host EC2 Instance
 
-![](screenshots/04-bastion-ec2.png)
+![](static/images/04-bastion-ec2.png)
 
 ---
 
 ## 5. Auto Scaling Group
 
-![](screenshots/05-auto-scaling-group.png)
+![](static/images/05-auto-scaling-group.png)
 
 ---
 
 ## 6. Launch Template
 
-![](screenshots/06-launch-template.png)
+![](static/images/06-launch-template.png)
 
 ---
 
 ## 7. Target Group
 
-![](screenshots/07-target-group-healthy.png)
+![](static/images/07-target-group-healthy.png)
 
 ---
 
 ## 8. Application Load Balancer
 
-![](screenshots/08-application-load-balancer.png)
+![](static/images/08-application-load-balancer.png)
 
 ---
 
 ## 9. Amazon RDS (MySQL)
 
-![](screenshots/09-rds-multi-az.png)
+![](static/images/09-rds-multi-az.png)
 
 ---
 
 ## 10. CloudWatch Dashboard
 
-![](screenshots/10-cloudwatch-dashboard.png)
+![](static/images/10-cloudwatch-dashboard.png)
 
 ---
 
 ## 11. CloudWatch Alarm
 
-![](screenshots/11-cloudwatch-alarm.png)
+![](static/images/11-cloudwatch-alarm.png)
 
 ---
 
 ## 12. Auto Scaling Activity History
 
-![](screenshots/12-asg-activity-history.png)
+![](static/images/12-asg-activity-history.png)
 
 ---
 
 ## 13. Application Home Page
 
-![](screenshots/13-home-page.png)
+![](static/images/13-home-page.png)
 
 ---
 
 ## 14. Student Registration
 
-![](screenshots/14-student-registration.png)
+![](static/images/14-student-registration.png)
 
 ---
 
 ## 15. Examination Dashboard
 
-![](screenshots/15-examination-dashboard.png)
+![](static/images/15-examination-dashboard.png)
 
 ---
 
 ## 16. Online Examination
 
-![](screenshots/16-online-examination.png)
+![](static/images/16-online-examination.png)
 
 ---
 
 ## 17. Examination Result
 
-![](screenshots/17-examination-result.png)
+![](static/images/17-examination-result.png)
 
 ---
 
 ## 18. Administrator Dashboard
 
-![](screenshots/18-admin-dashboard.png)
+![](static/images/18-admin-dashboard.png)
 
 ---
 
